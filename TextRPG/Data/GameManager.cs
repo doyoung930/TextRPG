@@ -34,6 +34,9 @@ public class GameManager
     #region 속성
     public Player? Player { get; set; }
     
+    // 게임 실행 여부
+    public bool IsRunning { get; private set; } = true;
+    
     #endregion
 
     #region 게임 시작/종료
@@ -44,8 +47,20 @@ public class GameManager
         ConsoleUI.ShowTitle(); 
         Console.WriteLine("게임에 오신것을 환영합니다!\n");
         
-        // TODO: 캐릭터 생성
+        // 캐릭터 생성
         CreateCharacter();
+        
+        // 메인 게임 루프
+        IsRunning = true;
+        while (IsRunning)
+        {
+            ShowMainMenu();
+        }
+
+        if (!IsRunning)
+        {
+            ConsoleUI.ShowGameOver();
+        }
         // TODO: 인벤토리 초기화
         // TODO: 초기 아이템 지급
     }
@@ -99,7 +114,55 @@ public class GameManager
         Player = new Player(name, job);
         Console.WriteLine($"\n{name}님, {job}직업으로 캐릭터가 생성 되었습니다.");
         
-        Player.DisplayInfo();
+        //Player.DisplayInfo();
+        
+        ConsoleUI.PressAnyKey();
+    }
+    #endregion
+    
+    #region 메인 메뉴
+
+    public void ShowMainMenu()
+    {
+        Console.Clear();
+        Console.WriteLine("\n╔════════════════════════════════╗");
+        Console.WriteLine("║         게임 시작              ║");
+        Console.WriteLine("╚════════════════════════════════╝");
+        Console.WriteLine("\n1. 상태 보기");
+        Console.WriteLine("2. 인벤토리");
+        Console.WriteLine("3. 상점");
+        Console.WriteLine("4. 던전 입장 (전투)");
+        Console.WriteLine("5. 휴식 (HP/MP 회복");
+        Console.WriteLine("6. 저장");
+        Console.WriteLine("0. 게임 종료");
+        Console.Write("\n 선택 (0~6): ");
+        string? input = Console.ReadLine();
+
+        switch (input)
+        {
+            case "1":
+                Player.DisplayInfo();
+                ConsoleUI.PressAnyKey();
+                break;
+            case "2":
+                break;
+            case "3":
+                break;
+            case "4":
+                break;
+            case "5":
+                break;
+            case "6":
+                break;
+            case "0":
+                IsRunning = false;
+                Console.WriteLine("\n 게임을 종료합니다. 이용해주셔서 감사합니다!");
+                break;
+            default:
+                Console.WriteLine("\n잘못된 입력입니다. 다시 선택해 주세요.");
+                ConsoleUI.PressAnyKey();
+                break;
+        }
     }
     #endregion
 }

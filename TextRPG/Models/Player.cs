@@ -9,6 +9,7 @@ public class Player : Character
     public JobType Job { get; protected set; }
     // 골드
     public int Gold { get; protected set; }
+    
     // 장착무기
     // 장착방어구
     #endregion
