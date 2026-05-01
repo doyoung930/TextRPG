@@ -28,11 +28,14 @@ public class GameManager
     private GameManager()
     {
         // 클래스가 생성 될 때 초기화 작업 수행
-        
     }
+    #endregion
+
+    #region 속성
+    public Player? Player { get; set; }
     
     #endregion
-    
+
     #region 게임 시작/종료
     // 게임 시작 메서드
     public void StartGame()
@@ -92,7 +95,9 @@ public class GameManager
 
             break;
         }
-
+        // 입력한 이름과 선택한 직업으로 플레이어 캐릭터 생성
+        Player = new Player(name, job);
+        Console.WriteLine($"\n{name}님, {job}직업으로 캐릭터가 생성 되었습니다.");
     }
     #endregion
 }
