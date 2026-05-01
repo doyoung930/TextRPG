@@ -56,7 +56,7 @@ public class GameManager
     private void CreateCharacter()
     {
         // 이름 입력
-        Console.WriteLine("캐릭터 이름을 입력하세요: ");
+        Console.Write("캐릭터 이름을 입력하세요: ");
         string? name = Console.ReadLine(); // nullable 허용
 
         if (string.IsNullOrWhiteSpace(name))
@@ -99,11 +99,7 @@ public class GameManager
         Player = new Player(name, job);
         Console.WriteLine($"\n{name}님, {job}직업으로 캐릭터가 생성 되었습니다.");
         
-        // 테스트코드
-        Console.WriteLine($"Player HP:{Player.CurrentHp}");
-        Console.WriteLine($"Player MP:{Player.CurrentMp}");
-        Console.WriteLine($"Player AttackPower:{Player.AttackPower}");
-        Console.WriteLine($"Player Defence:{Player.Defence}");
+        Player.DisplayInfo();
     }
     #endregion
 }

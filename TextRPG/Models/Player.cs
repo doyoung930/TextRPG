@@ -69,4 +69,12 @@ public class Player : Character
             _ => 15
         };
     #endregion
+
+    #region 메서드
+    public override void DisplayInfo()
+    {
+        base.DisplayInfo();
+        Console.WriteLine(($"골드: {Gold}"));
+    }
+    #endregion
 }
