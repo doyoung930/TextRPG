@@ -83,8 +83,34 @@ public class Player : Character
 
     public override void DisplayInfo()
     {
-        base.DisplayInfo();
+        //base.DisplayInfo();
+        Console.Clear();
+        Console.WriteLine($"===== {Name} =====");
+        Console.WriteLine($"레벨: {Level} ");
+        Console.WriteLine($"HP: {CurrentHp/MaxHp} ");
+        Console.WriteLine($"MP: {CurrentMp/MaxMp} ");
+
+        int attackBonus = EquipmentWeapon != null ? EquipmentWeapon.AttackBonus : 0;
+        int defenceBonus = EquipmentArmor != null ? EquipmentArmor.DefenceBonus : 0;
+        
+        Console.WriteLine($"ATK: {AttackPower} (+ {attackBonus})");
+        Console.WriteLine($"ATK: {Defence} (+ {defenceBonus})");
         Console.WriteLine(($"골드: {Gold}"));
+        
+        // 장착 아이템 목록
+        if (EquipmentWeapon != null || EquipmentArmor != null)
+        {
+            Console.WriteLine(("\n[장착 중인 장비 목록]"));
+            if (EquipmentWeapon != null)
+            {
+                Console.WriteLine($"무기: {EquipmentWeapon.Name}");
+            }
+            
+            if (EquipmentArmor != null)
+            {
+                Console.WriteLine($"방어구: {EquipmentArmor.Name}");
+            }
+        }
     }
 
 
@@ -143,7 +169,7 @@ public class Player : Character
             Console.WriteLine($"{prevEquipment.Name} 장착 해제");
         }
 
-        Console.WriteLine($"{prevEquipment.Name} 장착 완료");
+        Console.WriteLine($"{newEquipment.Name} 장착 완료");
     }
 
     // 장비 해제

@@ -16,7 +16,7 @@
     <list default="true" id="2acd09f9-84bc-4d1e-8a56-04d3138f5166" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TextRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TextRPG/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systems/InventorySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Systems/InventorySystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +131,7 @@
       <workItem from="1777473050415" duration="2672000" />
       <workItem from="1777475769735" duration="745000" />
       <workItem from="1777636772098" duration="7295000" />
-      <workItem from="1777698169521" duration="15973000" />
+      <workItem from="1777698169521" duration="17051000" />
     </task>
     <task id="LOCAL-00001" summary="프로젝트 : 프로젝트 초기화">
       <option name="closed" value="true" />
@@ -301,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777722928298</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="inventoru : 아이템 버리기 기능 추가 및 사용 가능한 아이템 인덱스 검증 수정">
+      <option name="closed" value="true" />
+      <created>1777723303716</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1777723303716</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +353,8 @@
     <MESSAGE value="equipment: 장비 클래스 및 슬롯 타입 추가" />
     <MESSAGE value="consumable: 아이템 사용 시 HP/MP 회복 기능 추가 및 초기 아이템 지급 로직 구현" />
     <MESSAGE value="equipment : 장비 착용 및 해제 기능 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="equipment : 장비 착용 및 해제 기능 추가" />
+    <MESSAGE value="inventoru : 아이템 버리기 기능 추가 및 사용 가능한 아이템 인덱스 검증 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="inventoru : 아이템 버리기 기능 추가 및 사용 가능한 아이템 인덱스 검증 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
