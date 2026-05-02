@@ -1,4 +1,5 @@
-﻿using TextRPG.Models;
+﻿using System;
+using TextRPG.Models;
 
 namespace TextRPG.Systems;
 public class BattleSystem

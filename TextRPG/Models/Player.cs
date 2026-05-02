@@ -1,6 +1,5 @@
-﻿namespace TextRPG.Models;
-
-
+﻿using System;
+namespace TextRPG.Models;
 
 public class Player : Character
 {
