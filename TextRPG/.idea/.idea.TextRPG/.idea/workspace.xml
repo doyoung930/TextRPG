@@ -127,7 +127,7 @@
       <workItem from="1777473050415" duration="2672000" />
       <workItem from="1777475769735" duration="745000" />
       <workItem from="1777636772098" duration="7295000" />
-      <workItem from="1777698169521" duration="3286000" />
+      <workItem from="1777698169521" duration="5970000" />
     </task>
     <task id="LOCAL-00001" summary="프로젝트 : 프로젝트 초기화">
       <option name="closed" value="true" />
@@ -233,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777702743194</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="battle : 플레이어 스킬공격 메서드 추가">
+      <option name="closed" value="true" />
+      <created>1777703128968</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1777703128968</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +276,8 @@
     <MESSAGE value="battle : 공격 및 피해 처리 메서드 추가" />
     <MESSAGE value="battle : 공격 및 피해 처리 메서드 추가&#10;, 플레이어의 일반공격 처리" />
     <MESSAGE value="system : using system 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="system : using system 추가" />
+    <MESSAGE value="battle : 플레이어 스킬공격 메서드 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="battle : 플레이어 스킬공격 메서드 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
