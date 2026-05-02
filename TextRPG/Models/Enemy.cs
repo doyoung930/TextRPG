@@ -38,8 +38,7 @@ public class Enemy :Character
         
         return new Enemy($"LV{enemyLevel} {enemyName}", maxHp, maxMp, attackPower, defence, enemyLevel,goldReward);
     }
-    #endregion
-    
+
     public override void DisplayInfo()
     {
         //base.DisplayInfo();
@@ -49,4 +48,12 @@ public class Enemy :Character
         Console.WriteLine($"공격력: {AttackPower}");
         Console.WriteLine($"방어력: {Defence}");
     }
+    
+    public override int Attack(Character target)
+    {
+        return target.TakeDamage(AttackPower);
+    }
+    
+    #endregion
+    
 }

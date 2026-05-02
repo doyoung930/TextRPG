@@ -34,6 +34,18 @@ public abstract class Character
     
     #region 메서드
     // 공통으로 사용할 메소드들
+    public abstract int Attack(Character target);
+    
+    // 데미지 처리 메서드
+    public virtual int TakeDamage(int damage)
+    {
+        // 방어력 적용
+        int actualDamage = Math.Max(1, damage - Defence);
+        
+        CurrentHp = Math.Max(0, CurrentHp - actualDamage);
+        
+        return actualDamage;
+    }
     
     // 캐릭터 스텟 출력
     public virtual void DisplayInfo()
