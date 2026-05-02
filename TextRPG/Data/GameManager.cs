@@ -29,12 +29,19 @@ public class GameManager
     private GameManager()
     {
         // 클래스가 생성 될 때 초기화 작업 수행
+        
+        // 전투 시스템 초기화
+        BattleSystem = new BattleSystem();
     }
     #endregion
 
-    #region 속성
+    #region 프로퍼티
+    // 플레이어 캐릭터
     public Player? Player { get; set; }
     
+    // 전투 시스템
+    public BattleSystem BattleSystem { get; private set; } 
+        
     // 게임 실행 여부
     public bool IsRunning { get; private set; } = true;
     
@@ -117,12 +124,13 @@ public class GameManager
         
         //Player.DisplayInfo();
         // 적 캐릭터 생성 테스트용 
-        Enemy enemy = Enemy.CreateEnemy(Player.Level);
-        enemy.DisplayInfo();
+        // Enemy enemy = Enemy.CreateEnemy(Player.Level);
+        // enemy.DisplayInfo();
+        //
+        // // 전투 테스트
+        // BattleSystem battleSystem = new BattleSystem();
+        // bool playerWin = battleSystem.StartBattle(Player, enemy);
         
-        // 전투 테스트
-        BattleSystem battleSystem = new BattleSystem();
-        bool playerWin = battleSystem.StartBattle(Player, enemy);
         ConsoleUI.PressAnyKey();
     }
     #endregion
@@ -156,6 +164,8 @@ public class GameManager
             case "3":
                 break;
             case "4":
+                // 던전 입장
+                EnterDungeon();
                 break;
             case "5":
                 break;
@@ -170,6 +180,25 @@ public class GameManager
                 ConsoleUI.PressAnyKey();
                 break;
         }
+    }
+    #endregion
+    
+    #region 메뉴기능
+    // 던전 ㅇ비장
+    public void EnterDungeon()
+    {
+        Console.Clear();
+        Console.WriteLine("\n던전에 입장합니다...");
+        
+        // 적 캐릭터 생성
+        Enemy enemy = Enemy.CreateEnemy(Player.Level);
+        ConsoleUI.PressAnyKey();
+
+        // 전투 시작
+        BattleSystem.StartBattle(Player, enemy);
+        
+        Console.WriteLine("\n던전 탐험을 마치고 마을로 돌아갑니다.");
+        ConsoleUI.PressAnyKey();
     }
     #endregion
 }

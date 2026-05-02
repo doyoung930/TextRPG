@@ -106,7 +106,18 @@ public class BattleSystem
                     return true;
                     break;
                 case "3":
-                    //도망시도
+                    //도망시도 : 성공확률 50%
+                    Random random = new Random();
+                    if (random.NextDouble() < 0.5)
+                    {
+                        Console.WriteLine("\n도망에 성공했습니다!");
+                        return false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n도망에 실패했습니다.");
+                        return true;
+                    }
                     return false;
                     break;
                 default:
