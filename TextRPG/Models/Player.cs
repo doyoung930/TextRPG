@@ -120,6 +120,17 @@ public class Player : Character
         // TODO:장착무기 또ㅓ는 방어구에 따른 추가데미지 계산
         int attackDamage = AttackPower;
 
+        attackDamage += EquipmentWeapon?.AttackBonus ?? 0;
+
+        //if (EquipmentWeapon != null)
+        //{
+        //    attackDamage += EquipmentWeapon.AttackBonus;
+        //}
+        
+        // null 병합 연산자 : ??
+        //int? a = null;
+        //int b = a ?? 100;
+        
         return target.TakeDamage(attackDamage);
     }
 
@@ -130,6 +141,8 @@ public class Player : Character
 
         // 스킬 공격 = 기본 공격 1.5 데미지
         int totalDamage = AttackPower;
+
+        totalDamage += EquipmentWeapon?.AttackBonus ?? 0;
         totalDamage = (int)(totalDamage * 1.5f);
 
         // MP 소모
