@@ -115,7 +115,9 @@ public class GameManager
         Console.WriteLine($"\n{name}님, {job}직업으로 캐릭터가 생성 되었습니다.");
         
         //Player.DisplayInfo();
-        
+        // 적 캐릭터 생성 테스트용 
+        Enemy enemy = Enemy.CreateEnemy(Player.Level);
+        enemy.DisplayInfo();
         ConsoleUI.PressAnyKey();
     }
     #endregion
