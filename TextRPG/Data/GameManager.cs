@@ -1,6 +1,6 @@
 ﻿using TextRPG.Utils;
 using TextRPG.Models;
-
+using TextRPG.Systems;
 namespace TextRPG.Data;
 
 public class GameManager
@@ -118,6 +118,10 @@ public class GameManager
         // 적 캐릭터 생성 테스트용 
         Enemy enemy = Enemy.CreateEnemy(Player.Level);
         enemy.DisplayInfo();
+        
+        // 전투 테스트
+        BattleSystem battleSystem = new BattleSystem();
+        bool playerWin = battleSystem.StartBattle(Player, enemy);
         ConsoleUI.PressAnyKey();
     }
     #endregion

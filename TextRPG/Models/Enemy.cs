@@ -44,6 +44,7 @@ public class Enemy :Character
     {
         //base.DisplayInfo();
         Console.WriteLine($"==== {Name} 정보 ====");
+        Console.WriteLine($"레벨: {Level}");
         Console.WriteLine($"체력: {CurrentHp}/{MaxHp}");
         Console.WriteLine($"공격력: {AttackPower}");
         Console.WriteLine($"방어력: {Defence}");
