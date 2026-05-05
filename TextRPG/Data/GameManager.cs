@@ -2,6 +2,7 @@
 using TextRPG.Utils;
 using TextRPG.Models;
 using TextRPG.Systems;
+
 namespace TextRPG.Data;
 
 public class GameManager
@@ -34,7 +35,7 @@ public class GameManager
         BattleSystem = new BattleSystem();
         
         // 상점 시스템 초기화
-        Shop = new ShopSystem();
+        ShopSystem = new ShopSystem();
     }
     #endregion
 
@@ -49,7 +50,7 @@ public class GameManager
     public InventorySystem Inventory{ get; private set; }
 
     // 상점 시스템
-    public ShopSystem Shop { get; private set; }
+    public ShopSystem ShopSystem { get; private set; }
     
     // 게임 실행 여부
     public bool IsRunning { get; private set; } = true;
@@ -211,6 +212,8 @@ public class GameManager
                 EnterDungeon();
                 break;
             case "5":
+                // 휴식 기능
+                Rest();
                 break;
             case "6":
                 break;
@@ -227,7 +230,7 @@ public class GameManager
     #endregion
     
     #region 메뉴기능
-    // 던전 ㅇ비장
+    // 던전 입장
     public void EnterDungeon()
     {
         Console.Clear();
@@ -242,6 +245,33 @@ public class GameManager
         
         Console.WriteLine("\n던전 탐험을 마치고 마을로 돌아갑니다.");
         ConsoleUI.PressAnyKey();
+    }
+    
+    // 휴식 (HP/MP 회복)
+    private void Rest()
+    {
+        // 상수(Constant)
+        const int restCost = 50;
+        
+        Console.Clear();
+        Console.WriteLine("\n 여관에서 휴식을 취합니다...");
+        Console.WriteLine($"\n비용: {restCost} 골드");
+
+        if (Player.Gold < restCost)
+        {
+            Console.WriteLine("\n 골드가 부족합니다...");
+            ConsoleUI.PressAnyKey();
+            return;
+        }
+        
+        Console.Write("\n휴식을 취하겠습니까? (y/n): ");
+        if (Console.ReadLine()?.ToLower() == "y")
+        {
+            Player.SpendGold(restCost);
+            Player.HealHp(Player.MaxHp);
+            Player.HealMp(Player.MaxMp);
+            Console.WriteLine("\n휴식을 취했습니다. HP와 MP 모두 회복 되었습니다.");
+        }
     }
     #endregion
 }

@@ -9,10 +9,12 @@ namespace TextRPG.Systems;
 public class ShopSystem
 {
    #region 프로퍼티
+
    // 판매 중인 아이템 목록
    private List<Item>? ShopItems { get; set; }
+
    #endregion
-   
+
    #region 생성자
 
    public ShopSystem()
@@ -21,8 +23,9 @@ public class ShopSystem
       // 아이템 초기화
       InitShop();
    }
+
    #endregion
-   
+
    #region 초기화 메서드
 
    private void InitShop()
@@ -41,11 +44,13 @@ public class ShopSystem
       ShopItems.Add(Consumable.CreatePotion("마나포션"));
       ShopItems.Add(Consumable.CreatePotion("대형마나포션"));
    }
+
    #endregion
-   
+
    #region 상점 메뉴
+
    // 메뉴 표시
-   public static void ShowShopMenu(Player player, InventorySystem inventory)
+   public void ShowShopMenu(Player player, InventorySystem inventory)
    {
       while (true)
       {
@@ -60,16 +65,20 @@ public class ShopSystem
          Console.WriteLine("0. 나가기");
 
          Console.WriteLine("\n 선택> ");
-         
+
          string? input = Console.ReadLine();
 
          switch (input)
          {
             case "1":
+               // 구매 메서드
+               BuyItem(player, inventory);
                break;
-            case"2":
+            case "2":
+               // 판매 메서드
+               SellItem(player, inventory);
                break;
-            case"0":
+            case "0":
                Console.WriteLine("\n상점을 나갑니다....");
                ConsoleUI.PressAnyKey();
                return;
@@ -80,5 +89,143 @@ public class ShopSystem
          }
       }
    }
+
    #endregion
+
+   #region 구매 메서드
+
+   private void BuyItem(Player player, InventorySystem inventory)
+   {
+      Console.Clear();
+      Console.WriteLine("\n[구매 가능한 아이템]");
+
+      for (int i = 0; i < ShopItems.Count; i++)
+      {
+         Console.WriteLine($"[{i + 1}] ");
+         ShopItems[i].DisplayInfo();
+      }
+
+      Console.Write("\n구매할 아이템 번호를 선택하세요. (0:취소)> ");
+
+      if (int.TryParse(Console.ReadLine(), out int index) && index > 0 && index <= ShopItems.Count)
+      {
+         Item selectedItem = ShopItems[index - 1];
+         {
+            // 골드가 충분한지 확인
+            if (player.Gold >= selectedItem.Price)
+            {
+               Console.Write($"{selectedItem.Name}을 {selectedItem.Price} 골드로 구매하시겠습니까? (y/n): ");
+               if (Console.ReadLine()?.ToLower() == "y")
+               {
+                  // 골드를 차감
+                  player.SpendGold(selectedItem.Price);
+
+                  // 구매한 아이템의 인스턴스 생성(복제)
+                  Item? item = CreateImte(selectedItem);
+
+                  // 아이템 장착 또는 인벤토리에 추가
+                  if (item is Equipment equipment)
+                  {
+                     inventory.AddItem(equipment);
+                     player.EquipItem(equipment);
+                  }
+                  else if (item is Consumable consumable)
+                  {
+                     inventory.AddItem(consumable);
+                  }
+
+                  Console.WriteLine($"{selectedItem.Name}을 구매하였습니다.");
+                  ConsoleUI.PressAnyKey();
+               }
+            }
+            else
+            {
+               Console.WriteLine("\n골드가 부족합니다.");
+               ConsoleUI.PressAnyKey();
+            }
+         }
+      }
+   }
+
+   #endregion
+
+   #region 아이템 복제 메서드
+
+   private Item? CreateImte(Item item)
+   {
+      // 장착 아이템
+      if (item is Equipment equipment)
+      {
+         var newItem = new Equipment(
+            equipment.Name,
+            equipment.Description,
+            equipment.Price,
+            equipment.Slot,
+            equipment.AttackBonus,
+            equipment.DefenceBonus
+         );
+         return newItem;
+      }
+      // 소모성 아이템
+      else if (item is Consumable consumable)
+      {
+         return new Consumable(
+            consumable.Name,
+            consumable.Description,
+            consumable.Price,
+            consumable.HpAmount,
+            consumable.MpAmount
+         );
+      }
+
+      return null;
+   }
+
+   #endregion
+
+   #region 아이템 판매
+
+   private void SellItem(Player player, InventorySystem inventory)
+   {
+      if (inventory.Count == 0)
+      {
+         Console.WriteLine("\n 판매할 아이템이 없습니다.");
+      }
+
+      inventory.DisplayInventory();
+
+      Console.Write("\n판매할 아이템 번호를 입력하세요. (0:취소)> ");
+
+      if (int.TryParse(Console.ReadLine(), out int index) && index > 0 && index <= inventory.Count)
+      {
+         Item? item = inventory.GetItem(index - 1);
+
+         if (item != null)
+         {
+            // 판매 가격 할인 (구매 가격의 50%)
+            int sellPrice = (int)(item.Price * 0.5f);
+
+            Console.WriteLine($"{item.Name}을 {sellPrice} 골드에 판매하시겠습니까? (y/n): ");
+
+            if (Console.ReadLine()?.ToLower() == "y")
+            {
+               //아이템 인벤토리에서 제거 및 골드 증가
+               inventory.RemoveItem(item);
+               player.GainGold(sellPrice);
+
+               // 장착 해제
+               if (item is Equipment equipment)
+               {
+                  player.UnEquipment(equipment.Slot);
+               }
+
+               Console.WriteLine($"{item.Name}을 판매했습니다.");
+            }
+
+         }
+      }
+   }
+   #endregion
+   
 }
+

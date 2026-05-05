@@ -158,7 +158,16 @@ public class Player : Character
         Gold += amount;
         Console.WriteLine($"골드 + {amount} 획득! 현재 골드: {Gold}");
     }
-
+    
+    // 골드 차감 메서드
+    public void SpendGold(int amount)
+    {
+        if (Gold >= amount)
+        {
+            Gold -= amount;
+        }
+    }
+    
     // 장비 착용
     public void EquipItem(Equipment newEquipment)
     {
