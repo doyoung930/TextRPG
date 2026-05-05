@@ -14,9 +14,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2acd09f9-84bc-4d1e-8a56-04d3138f5166" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Systems/ShopSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/GameSaveData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Systems/SaveLoadSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TextRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TextRPG/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Systems/InventorySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Systems/InventorySystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +29,7 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="9" />
+    <option name="cachedIndexableFilesCount" value="10" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -48,6 +50,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fd57398b7dc3a8ce7da2786f2c67289c3d974658a9e90d0c1e84db3d965fbf1/Console.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Data/GameSaveData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/Consumable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
@@ -57,6 +60,7 @@
     <setting file="file://$PROJECT_DIR$/Models/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Systems/BattleSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Systems/InventorySystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Systems/SaveLoadSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Systems/ShopSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Utils/ConsoleUI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -77,32 +81,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET 프로젝트.TextRPG.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET 프로젝트.TextRPG.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "XThreadsFramesViewSplitterKey": "0.22647528",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="TextRPG" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -138,7 +143,7 @@
       <workItem from="1777636772098" duration="7295000" />
       <workItem from="1777698169521" duration="20153000" />
       <workItem from="1777960684756" duration="1038000" />
-      <workItem from="1777961767535" duration="932000" />
+      <workItem from="1777961767535" duration="5528000" />
     </task>
     <task id="LOCAL-00001" summary="프로젝트 : 프로젝트 초기화">
       <option name="closed" value="true" />
@@ -332,7 +337,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777725896628</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="shop: 상점 시스템 구현 및 초기화 로직 추가">
+      <option name="closed" value="true" />
+      <created>1777962762087</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1777962762087</updated>
+    </task>
+    <task id="LOCAL-00026" summary="shop: 상점 아이템 구매/판매 기능 추가 및 ShopSystem 메서드 구현">
+      <option name="closed" value="true" />
+      <created>1777966118528</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1777966118529</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,8 +374,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="플레이어 생성 및 직업 선택 로직" />
-    <MESSAGE value="player: Character 기본 추상 클래스" />
     <MESSAGE value="player: Player 캐릭터 생성" />
     <MESSAGE value="player : 직업별 초기 스텟 설정 및 테스트 코드 추가" />
     <MESSAGE value="player" />
@@ -378,7 +397,9 @@
     <MESSAGE value="inventoru : 아이템 버리기 기능 추가 및 사용 가능한 아이템 인덱스 검증 수정" />
     <MESSAGE value="equipment: 기본 장비 방어구 방어력 증가 및 초기 장비 착용 기능 추가" />
     <MESSAGE value="inventory : 아이템 버리기 시 장착 해제 로직 추가 및 DropItem 메서드 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="inventory : 아이템 버리기 시 장착 해제 로직 추가 및 DropItem 메서드 수정" />
+    <MESSAGE value="shop: 상점 시스템 구현 및 초기화 로직 추가" />
+    <MESSAGE value="shop: 상점 아이템 구매/판매 기능 추가 및 ShopSystem 메서드 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="shop: 상점 아이템 구매/판매 기능 추가 및 ShopSystem 메서드 구현" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -395,6 +416,45 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Systems/ShopSystem.cs</url>
+          <line>120</line>
+          <properties documentPath="C:\Users\Administrator\Desktop\TextRPG\TextRPG\Systems\ShopSystem.cs" containingFunctionPresentation="메서드 'BuyItem'">
+            <startOffsets>
+              <option value="3049" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3086" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Systems/ShopSystem.cs</url>
+          <line>116</line>
+          <properties documentPath="C:\Users\Administrator\Desktop\TextRPG\TextRPG\Systems\ShopSystem.cs" containingFunctionPresentation="메서드 'BuyItem'">
+            <startOffsets>
+              <option value="2846" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2928" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Systems/ShopSystem.cs</url>
+          <line>117</line>
+          <properties documentPath="C:\Users\Administrator\Desktop\TextRPG\TextRPG\Systems\ShopSystem.cs" containingFunctionPresentation="메서드 'BuyItem'">
+            <startOffsets>
+              <option value="2944" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2985" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
