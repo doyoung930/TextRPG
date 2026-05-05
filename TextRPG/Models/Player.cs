@@ -9,7 +9,7 @@ public class Player : Character
     public JobType Job { get; private set; }
 
     // 골드
-    public int Gold { get; private set; }
+    public int Gold { get;  set; }
 
     // 장착무기
     public Equipment? EquipmentWeapon { get; private set; }
