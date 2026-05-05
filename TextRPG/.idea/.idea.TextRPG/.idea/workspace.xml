@@ -14,9 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2acd09f9-84bc-4d1e-8a56-04d3138f5166" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Systems/ShopSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TextRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TextRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Systems/InventorySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Systems/InventorySystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +25,10 @@
   </component>
   <component name="DpaMonitoringSettings">
     <option name="firstShow" value="false" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="9" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -53,6 +57,7 @@
     <setting file="file://$PROJECT_DIR$/Models/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Systems/BattleSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Systems/InventorySystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Systems/ShopSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Utils/ConsoleUI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
@@ -131,7 +136,9 @@
       <workItem from="1777473050415" duration="2672000" />
       <workItem from="1777475769735" duration="745000" />
       <workItem from="1777636772098" duration="7295000" />
-      <workItem from="1777698169521" duration="18139000" />
+      <workItem from="1777698169521" duration="20153000" />
+      <workItem from="1777960684756" duration="1038000" />
+      <workItem from="1777961767535" duration="932000" />
     </task>
     <task id="LOCAL-00001" summary="프로젝트 : 프로젝트 초기화">
       <option name="closed" value="true" />
@@ -317,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777724426486</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="inventory : 아이템 버리기 시 장착 해제 로직 추가 및 DropItem 메서드 수정">
+      <option name="closed" value="true" />
+      <created>1777725896627</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1777725896628</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,7 +353,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="프로젝트 : 프로젝트 초기화" />
     <MESSAGE value="플레이어 생성 및 직업 선택 로직" />
     <MESSAGE value="player: Character 기본 추상 클래스" />
     <MESSAGE value="player: Player 캐릭터 생성" />
@@ -363,7 +377,8 @@
     <MESSAGE value="equipment : 장비 착용 및 해제 기능 추가" />
     <MESSAGE value="inventoru : 아이템 버리기 기능 추가 및 사용 가능한 아이템 인덱스 검증 수정" />
     <MESSAGE value="equipment: 기본 장비 방어구 방어력 증가 및 초기 장비 착용 기능 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="equipment: 기본 장비 방어구 방어력 증가 및 초기 장비 착용 기능 추가" />
+    <MESSAGE value="inventory : 아이템 버리기 시 장착 해제 로직 추가 및 DropItem 메서드 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="inventory : 아이템 버리기 시 장착 해제 로직 추가 및 DropItem 메서드 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
