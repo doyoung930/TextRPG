@@ -59,7 +59,7 @@ public class GameManager
 
     #region 게임 시작/종료
     // 게임 시작 메서드
-    public void StartGame(bool loadedGame = true)
+    public void StartGame(bool loadedGame = false)
     {
         // 타이틀 표시
         ConsoleUI.ShowTitle(); 

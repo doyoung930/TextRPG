@@ -113,7 +113,7 @@ public class SaveLoadSystem
         {
             // 1. JSON 파일에서 문자열 읽기
             string jsonString = File.ReadAllText(SaveFilePath);
-            
+            Console.WriteLine(jsonString);
             // 2. JSON 문자열 -> DTO 변환 (역직렬화)
             var saveData =JsonSerializer.Deserialize<GameSaveData>(jsonString, jsonOptions);
             Console.WriteLine("\n게임데이터가 로드 되었습니다.");

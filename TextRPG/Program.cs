@@ -50,7 +50,7 @@ class Program
                     // 이어서하기
                     if (GameManager.Instance.LoadGame())
                     {
-                        GameManager.Instance.StartGame();
+                        GameManager.Instance.StartGame(true);
                     }
                     return;
                 case "0":
