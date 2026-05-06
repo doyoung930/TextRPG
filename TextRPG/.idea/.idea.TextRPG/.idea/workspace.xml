@@ -16,8 +16,6 @@
     <list default="true" id="2acd09f9-84bc-4d1e-8a56-04d3138f5166" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TextRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TextRPG/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Systems/SaveLoadSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Systems/SaveLoadSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +144,7 @@
       <workItem from="1777960684756" duration="1038000" />
       <workItem from="1777961767535" duration="8447000" />
       <workItem from="1778078728366" duration="4000" />
-      <workItem from="1778081767451" duration="2384000" />
+      <workItem from="1778081767451" duration="3198000" />
     </task>
     <task id="LOCAL-00001" summary="프로젝트 : 프로젝트 초기화">
       <option name="closed" value="true" />
@@ -372,7 +370,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777973542243</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="game: 수정된 GameManager.StartGame 파라미터 기본값 및 출력 형식 개선">
+      <option name="closed" value="true" />
+      <created>1778085400360</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1778085400361</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +399,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="player" />
     <MESSAGE value="player : 캐릭터 및 플레이어 정보 출력 메소드 추가" />
     <MESSAGE value="game : 메인 겡미루프 및 메뉴 시스템 추가" />
     <MESSAGE value="game : 메인 게임루프 및 메뉴 시스템 추가" />
@@ -418,7 +423,8 @@
     <MESSAGE value="shop: 상점 아이템 구매/판매 기능 추가 및 ShopSystem 메서드 구현" />
     <MESSAGE value="save: 게임 저장 데이터 구조 및 SaveLoadSystem 구현" />
     <MESSAGE value="save: 게임 로드 기능 추가 및 SaveLoadSystem 확장" />
-    <option name="LAST_COMMIT_MESSAGE" value="save: 게임 로드 기능 추가 및 SaveLoadSystem 확장" />
+    <MESSAGE value="game: 수정된 GameManager.StartGame 파라미터 기본값 및 출력 형식 개선" />
+    <option name="LAST_COMMIT_MESSAGE" value="game: 수정된 GameManager.StartGame 파라미터 기본값 및 출력 형식 개선" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -435,71 +441,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Systems/ShopSystem.cs</url>
-          <line>120</line>
-          <properties documentPath="C:\Users\Administrator\Desktop\TextRPG\TextRPG\Systems\ShopSystem.cs" containingFunctionPresentation="메서드 'BuyItem'">
-            <startOffsets>
-              <option value="3049" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3086" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Systems/ShopSystem.cs</url>
-          <line>116</line>
-          <properties documentPath="C:\Users\Administrator\Desktop\TextRPG\TextRPG\Systems\ShopSystem.cs" containingFunctionPresentation="메서드 'BuyItem'">
-            <startOffsets>
-              <option value="2846" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2928" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Systems/ShopSystem.cs</url>
-          <line>117</line>
-          <properties documentPath="C:\Users\Administrator\Desktop\TextRPG\TextRPG\Systems\ShopSystem.cs" containingFunctionPresentation="메서드 'BuyItem'">
-            <startOffsets>
-              <option value="2944" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2985" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Systems/SaveLoadSystem.cs</url>
-          <line>142</line>
-          <properties documentPath="C:\Users\Administrator\Desktop\TextRPG\TextRPG\Systems\SaveLoadSystem.cs" containingFunctionPresentation="메서드 'LoadPlayer'">
-            <startOffsets>
-              <option value="3829" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3863" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Data/GameManager.cs</url>
-          <line>200</line>
-          <properties documentPath="C:\Users\Administrator\Desktop\TextRPG\TextRPG\Data\GameManager.cs" containingFunctionPresentation="메서드 'ShowMainMenu'">
-            <startOffsets>
-              <option value="5004" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5025" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
